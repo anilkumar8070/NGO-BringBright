@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bring Bright Foundation - National Government Organization</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Custom CSS */
+        .hero {
+            background: url('m2.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+        }
+        
+        .stats-item {
+            transition: transform 0.3s ease;
+        }
+        
+        .stats-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .program-card {
+            transition: all 0.3s ease;
+        }
+        
+        .program-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .news-card {
+            transition: all 0.3s ease;
+        }
+        
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Top Banner -->
+    <div style="background-color: #fbfe65; color: #232323;" class="text-sm py-1 px-4 flex justify-between items-center">
+        <div class="flex space-x-4">
+            <span><i class="fas fa-phone-alt mr-1"></i> Helpline: 1800-123-4567</span>
+            <span><i class="fas fa-envelope mr-1"></i> contact@bringbright.org</span>
+        </div>
+        <div class="flex space-x-4">
+            <a href="#" class="hover:text-blue-200"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="hover:text-blue-200"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/bringbrightsmilefoundation/" class="hover:text-blue-200"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="hover:text-blue-200"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <img style=" border-radius: 50%; border: #232323 solid 1px;" src="logo.jpg" alt="Logo" class="h-12 mr-3">
+                <div>
+                    <h1 style="color: #232323;" class="text-2xl font-bold">Bring Bright Foundation</h1>
+                    <p class="text-xs text-gray-600">National Government Organization</p>
+                </div>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <div class="dropdown relative">
+                    <button style="color: #232323 ;" class="text-blue-900 hover:text-blue-700 font-medium flex items-center">
+                        About Us <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+                    <div class="dropdown-menu absolute hidden bg-white shadow-lg rounded mt-2 py-2 w-48">
+                        <a href="#" class="block px-4 py-2 hover:bg-blue-50 text-gray-800">Our Mission</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-blue-50 text-gray-800">Leadership</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-blue-50 text-gray-800">History</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-blue-50 text-gray-800">Annual Reports</a>
+                    </div>
+                </div>
+                
+                <div class="dropdown relative">
+                    <button style="color: #232323 ;" class="text-blue-900 hover:text-blue-700 font-medium flex items-center">
+                        Programs <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+                    <div class="dropdown-menu absolute hidden bg-white shadow-lg rounded mt-2 py-2 w-48">
+                        <a href="#" class="block px-4 py-2 hover:bg-blue-50 text-gray-800">Education</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-blue-50 text-gray-800">Healthcare</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-blue-50 text-gray-800">Community Development</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-blue-50 text-gray-800">Disaster Relief</a>
+                    </div>
+                </div>
+                
+                <a href="#" style="color: #232323 ;" class="text-blue-900 hover:text-blue-700 font-medium">Get Involved</a>
+                <a href="#" style="color: #232323 ;" class="text-blue-900 hover:text-blue-700 font-medium">News & Events</a>
+                <a href="#" style="color: #232323 ;" class="text-blue-900 hover:text-blue-700 font-medium">Contact</a>
+            </nav>
+            
+            <div class="hidden md:block">
+                <a href="login.html" style="color: #232323; background-color: #fbfe65;" class=" bg-blue-700 hover:bg-blue-800 text-white px-6 py-2 rounded-md font-medium">LOGIN</a>
+            </div>
+            
+            <button class="ml-5 md:hidden text-blue-900" id="mobile-menu-button">
+                 <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white shadow-lg py-2 px-4" id="mobile-menu">
+            <a href="#" style="color: #232323; background-color: #fbfe65 ; font-weight: 700;" class="block py-2 text-blue-900 hover:text-blue-700">About Us</a>
+            <a href="#" style="color: #232323; background-color: #fbfe65 ; font-weight: 700;" class="block py-2 text-blue-900 hover:text-blue-700">Programs</a>
+            <a href="#" style="color: #232323; background-color: #fbfe65 ; font-weight: 700;" class="block py-2 text-blue-900 hover:text-blue-700">Get Involved</a>
+            <a href="#" style="color: #232323; background-color: #fbfe65 ; font-weight: 700;" class="block py-2 text-blue-900 hover:text-blue-700">News & Events</a>
+            <a href="#" style="color: #232323; background-color: #fbfe65 ; font-weight: 700;" class="block py-2 text-blue-900 hover:text-blue-700">Contact</a>
+            <a href="#" style="color: #232323; background-color: #fbfe65 ; font-weight: 700;" class="block py-2 text-blue-900 hover:text-blue-700">Donate</a>
+        </div>
+    </header>
+    <marquee style="font-weight: 600; font-size:x-small;" behavior="alternate">2025 XYZ. All Rights Reserved.</marquee>
+    <!-- Hero Section -->
+    <section class="hero text-white py-24 md:py-32">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Empowering Communities, Transforming Lives</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Bring Bright Foundation is committed to creating sustainable change through education, healthcare, and community development initiatives.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#" style="background-color: #f8fc3cf6; color: #232323;" class=" hover:bg-blue-800 text-white px-8 py-3 rounded-md font-medium text-lg">Our Programs</a>
+                <a href="donate.html" style="background-color: #f8fc3cf6; color: #232323;" class="hover:bg-gray-100  px-8 py-3 rounded-md font-medium text-lg">Donate Now</a>
+            </div>
+        </div>
+    </section>
+
+
+
+
+<div style="display: flex; flex-direction: row; background-color: #ffffff; height: 30rem; width: 100%;">
+            <div class="vid">
+                <div> <video style=" margin-left: 17rem; height: 20rem; position: relative; top: 8rem; left: -9rem;" class="vidx"  autoplay loop muted playsinline >
+                <source src="vdxv1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+                <div><video  style="margin-left: 14rem; height: 20rem; position: relative; top: 3rem; left: -15rem;" class="vidx" autoplay loop muted playsinline >
+                <source src="vdxv2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+                <div><video  style="margin-top: 1rem; margin-left: 17rem ; height: 20rem; position: relative; top: 10rem; left: -25rem;" class="vidx" autoplay loop muted playsinline>
+                <source src="vdxv3.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            </div>
+            <div class="txt" style="width: 45%; text-align: center; color: #232323;">
+                <p style="font-size: 2.5rem ; font-weight: 600; padding-top: 10rem;">Empowering </p>
+                <p style="font-size: 2.5rem ; font-weight: 600;"><span style="font-family:cursive; font-size: 3.5rem; color: #fbfe65;">Every Child</span> for a</p>
+                <p style="font-size: 2.5rem ; font-weight: 600;">Happier and</p>
+                <p style="font-size: 2.5rem ; font-weight: 600;">Brighter Tomorrow.</p>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+    <!-- Stats Section -->
+    <section style="color: #232323 ; background-color:#fbfe65;" class="bg-blue-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div style="background-color:lightyellow ; color: #232323" class="stats-item bg-blue-700 p-6 rounded-lg">
+                    <div class="text-4xl font-bold mb-2">25+</div>
+                    <div class="text-sm uppercase tracking-wider">Years of Service</div>
+                </div>
+                <div style="background-color:lightyellow ; color: #232323" class="stats-item bg-blue-700 p-6 rounded-lg">
+                    <div class="text-4xl font-bold mb-2">500+</div>
+                    <div class="text-sm uppercase tracking-wider">Communities Served</div>
+                </div>
+                <div style="background-color:lightyellow ; color: #232323" class="stats-item bg-blue-700 p-6 rounded-lg">
+                    <div class="text-4xl font-bold mb-2">1M+</div>
+                    <div class="text-sm uppercase tracking-wider">Lives Impacted</div>
+                </div>
+                <div style="background-color:lightyellow ; color: #232323" class="stats-item bg-blue-700 p-6 rounded-lg">
+                    <div class="text-4xl font-bold mb-2">100+</div>
+                    <div class="text-sm uppercase tracking-wider">Active Programs</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-10">
+                    <h2 style="color: #232323;" class="text-3xl font-bold text-blue-900 mb-6">About Bring Bright Foundation</h2>
+                    <p style="color: #232323;" class="text-gray-700 mb-4">Established in 1998, Bring Bright Foundation is a national government organization dedicated to improving the quality of life for citizens across the country through comprehensive development programs.</p>
+                    <p class="text-gray-700 mb-6">Our mission is to create sustainable change by addressing the root causes of poverty, inequality, and lack of access to basic services through innovative solutions and community participation.</p>
+                    <a href="#" style="background-color: #fbfe65; color: #232323;" class="inline-block bg-blue-700 hover:bg-blue-800 text-white px-6 py-2 rounded-md font-medium">Learn More About Us</a>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="m1.jpg" alt="Team photo" class="rounded-lg shadow-lg w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 style="background-color: #fbfe65; color: #232323;" class="text-3xl font-bold text-blue-900 mb-4">Our Key Programs</h2>
+                <p style="font-weight: 400;" class="text-gray-700 max-w-2xl mx-auto">We implement a wide range of programs designed to address the most pressing needs of our communities.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="program-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="pic2.jpg" alt="Education Program" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 style="color: #232323;" class="text-xl font-bold text-blue-900 mb-3">Bright Future Education Initiative</h3>
+                        <p class="text-gray-700 mb-4">Providing quality education to underprivileged children through school construction, teacher training, and scholarship programs.</p>
+                        <a href="#" style="color: #232323;" class="text-blue-700 hover:text-blue-900 font-medium">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                
+                <div class="program-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="pic5.jpg" alt="Healthcare Program" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 style="color: #232323;" class="text-xl font-bold text-blue-900 mb-3">Community Health Outreach</h3>
+                        <p class="text-gray-700 mb-4">Mobile clinics, health education, and disease prevention programs in rural and underserved urban areas.</p>
+                        <a href="#" style="color: #232323;" class="text-blue-700 hover:text-blue-900 font-medium">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                
+                <div class="program-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="pic6.jpg" alt="Livelihood Program" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 style="color: #232323;" class="text-xl font-bold text-blue-900 mb-3">Sustainable Livelihood Program</h3>
+                        <p class="text-gray-700 mb-4">Vocational training, microfinance, and entrepreneurship development to empower individuals and families.</p>
+                        <a style="color: #232323;" href="#" class="text-blue-700 hover:text-blue-900 font-medium">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-10">
+                <a href="#" style="background-color: #fbfe65; color: #232323;" class="inline-block bg-blue-700 hover:bg-blue-800 text-white px-8 py-3 rounded-md font-medium">View All Programs</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Stories -->
+    <section style="background-color: #232323; color: white;" class="py-16 bg-blue-900 text-white">
+        <div class=" container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2  style="font-size: 5rem; color: #fbfe65;" class="text-3xl font-bold mb-4">Impact Stories</h2>
+                <p class="max-w-2xl mx-auto">Hear from the people whose lives have been transformed through our programs.</p>
+            </div>
+            
+            <div class=" grid md:grid-cols-3 gap-8">
+                <div style=" background-color: #fbfe65; color: #232323;" class=" bg-blue-800 rounded-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Person" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Maria Santos</h4>
+                            <p style="color: #232323" class="text-blue-200 text-sm">Scholarship Recipient</p>
+                        </div>
+                    </div>
+                    <p class="italic mb-4">"ब्रिंग ब्राइट स्कॉलरशिप की बदौलत मैं अपने परिवार में पहली व्यक्ति बनी जिसने कॉलेज से स्नातक किया। अब मैं एक शिक्षक हूँ और अन्य बच्चों को उनके सपनों को पूरा करने में मदद कर रही हूँ।"</p>
+                    <div class="text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div style="background-color: #fbfe65; color: #232323;" class=" bg-blue-800 rounded-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Person" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Raj Patel</h4>
+                            <p style="color: #232323;" class="text-blue-200 text-sm">Small Business Owner</p>
+                        </div>
+                    </div>
+                    <p class="italic mb-4">"The microfinance program gave me the capital to start my grocery store. Now I employ 3 people and can send my children to school."</p>
+                    <div class="text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+                
+                <div style="background-color: #fbfe65; color: #232323;" class=" bg-blue-800 rounded-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Person" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Amina Yusuf</h4>
+                            <p style="color: #232323;" class="text-blue-200 text-sm">Community Health Worker</p>
+                        </div>
+                    </div>
+                    <p class="italic mb-4">"The health training I received from Bring Bright Foundation allows me to provide basic care to my village. We've reduced child mortality by 60% in 3 years."</p>
+                    <div class="text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News & Events -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center mb-8">
+                <h2 style="color: #232323;" class="text-3xl font-bold text-blue-900">Announcements & Event Calendar</h2>
+                <a href="#" style="color: #232323;" class="text-blue-700 hover:text-blue-900 font-medium">View All <i class="fas fa-arrow-right ml-1"></i></a>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="news-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100">
+                    <img src="pic7.jpg" alt="News" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span style="color: #232323;" class="text-sm text-blue-700 font-medium">June 15, 2023</span>
+                        <h3 style="color: #232323;" class="text-xl font-bold text-blue-900 my-2">Bring Bright Foundation Launches THE BRIGHT SMILE ACADEMY A New Rural Education Program</h3>
+                        <p style="color: #232323;" class="text-gray-700 mb-4">The program aims to build new schools in remote areas of Bihar</p>
+                        <a style="color: #232323;" href="#" class="text-blue-700 hover:text-blue-900 font-medium">Read More <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                
+                <div class="news-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100">
+                    <img src="pic8.jpg" alt="News" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span style="color: #232323;" class="text-sm text-blue-700 font-medium">May 28, 2023</span>
+                        <h3 style="color: #232323;" class="text-xl font-bold text-blue-900 my-2">Annual Fundraising Gala Raises Record $2.5 Million</h3>
+                        <p style="color: #232323;" class="text-gray-700 mb-4">The funds will support healthcare initiatives in underserved communities across the country...</p>
+                        <a style="color: #232323;" href="#" class="text-blue-700 hover:text-blue-900 font-medium">Read More <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                
+                <div class="news-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100">
+                    <img src="pic9.jpg" alt="News" class="w-full h-48 object-cover">
+                    
+                    <div class="p-6">
+                        <span style="color: #232323;" class="text-sm text-blue-700 font-medium">Upcoming Event</span>
+                        <h3 style="color: #232323;" class="text-xl font-bold text-blue-900 my-2">Community Health Fair</h3>
+                        <p style="color: #232323;" class="text-gray-700 mb-4">Free health screenings, vaccinations, and consultations for all ages at Central Park...</p>
+                        <a style="color: #232323;" href="#" class="text-blue-700 hover:text-blue-900 font-medium">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section style="background-color: #232323; color: #fbfe65;" class="py-16 bg-blue-700 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">Join Us in Making a Difference</h2>
+            <p style="color: white;" class="text-xl mb-8 max-w-3xl mx-auto">Your support helps us continue our vital work in communities across the nation. Together, we can create lasting change.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a style="background-color: #fbfe65; color: #232323;" href="donate.html" class="bg-white hover:bg-gray-100 text-blue-800 px-8 py-3 rounded-md font-medium text-lg">Donate Now</a>
+                <a href="#" class="bg-transparent hover:bg-blue-800 border-2 border-white text-white px-8 py-3 rounded-md font-medium text-lg">Volunteer</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners -->
+    <section class="py-12 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h3 class="text-center text-gray-600 mb-8 font-medium">Trusted by these organizations</h3>
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+                <img src="https://via.placeholder.com/150x60?text=Partner+1" alt="Partner" class="h-12 opacity-70 hover:opacity-100 transition">
+                <img src="https://via.placeholder.com/150x60?text=Partner+2" alt="Partner" class="h-12 opacity-70 hover:opacity-100 transition">
+                <img src="https://via.placeholder.com/150x60?text=Partner+3" alt="Partner" class="h-12 opacity-70 hover:opacity-100 transition">
+                <img src="https://via.placeholder.com/150x60?text=Partner+4" alt="Partner" class="h-12 opacity-70 hover:opacity-100 transition">
+                <img src="https://via.placeholder.com/150x60?text=Partner+5" alt="Partner" class="h-12 opacity-70 hover:opacity-100 transition">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background-color: #232323 ; color: #fbfe65;" class="bg-blue-900 text-white pt-12 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Bring Bright Foundation</h3>
+                    <p  style="color: white;" class="mb-4 text-blue-200">A national government organization committed to empowering communities and transforming lives through sustainable development programs.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" style="color: white;" class="text-blue-300 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" style="color: white;" class="text-blue-300 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="color: white;" class="text-blue-300 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="color: white;" class="text-blue-300 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" style="color: white;" class="text-blue-300 hover:text-white"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div >
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul style="color: #fbfe65;" class="space-y-2">
+                        <li><a href="#" style="color: white;" class="text-blue-200 hover:text-white">Home</a></li>
+                        <li><a href="#" style="color: white;" class="text-blue-200 hover:text-white">About Us</a></li>
+                        <li><a href="#" style="color: white;" class="text-blue-200 hover:text-white">Our Programs</a></li>
+                        <li><a href="#" style="color: white;" class="text-blue-200 hover:text-white">Get Involved</a></li>
+                        <li><a href="#" style="color: white;" class="text-blue-200 hover:text-white">News & Events</a></li>
+                        <li><a href="#" style="color: white;" class="text-blue-200 hover:text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Contact Info</h4>
+                    <ul style="color: white;" class="space-y-2 text-blue-200">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-2"></i>
+                            <span>123 Government Avenue, National Capital, Country</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt mt-1 mr-2"></i>
+                            <span>Helpline: 1800-123-4567</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-2"></i>
+                            <span>contact@bringbright.org</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 style="color: #fbfe65;" class="font-bold mb-4">Newsletter</h4>
+                    <p style="color: white;" class="text-blue-200 mb-4">Subscribe to our newsletter to receive updates on our programs and initiatives.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-md w-full text-gray-900">
+                        <button style="background-color: #fbfe65 ; color: #232323;" type="submit" class="bg-blue-700 hover:bg-blue-800 px-4 py-2 rounded-r-md">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-yellow-300 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p style="color: #fbfe65;" class="text-blue-300 text-sm mb-4 md:mb-0">© 2023 Bring Bright Foundation. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a style="color: #fbfe65;" href="#" class="text-blue-300 hover:text-white text-sm">Privacy Policy</a>
+                    <a style="color: #fbfe65;" href="#" class="text-blue-300 hover:text-white text-sm">Terms of Service</a>
+                    <a style="color: #fbfe65;" href="#" class="text-blue-300 hover:text-white text-sm">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 bg-blue-700 text-white p-3 rounded-full shadow-lg hidden">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Back to Top Button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Dropdown menus
+        document.querySelectorAll('.dropdown').forEach(dropdown => {
+            const button = dropdown.querySelector('button');
+            const menu = dropdown.querySelector('.dropdown-menu');
+            
+            button.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+            
+            // Close when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!dropdown.contains(e.target)) {
+                    menu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

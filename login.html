@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bring Bright Foundation - Login</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary: #2a7f62; /* NGO green */
+            --secondary: #f9a828; /* accent yellow */
+            --dark: #1a3e34; /* dark green */
+            --light: #f8f9fa;
+            --text: #333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        /* Animated background elements - FASTER VERSION */
+        .community-circle {
+            position: absolute;
+            border-radius: 50%;
+            background-color: rgba(42, 127, 98, 0.1);
+            animation: float 8s infinite linear; /* Reduced from 15s */
+            z-index: 0;
+        }
+        
+        .light-beam {
+            position: absolute;
+            background: linear-gradient(to bottom, rgba(249, 168, 40, 0.1), transparent);
+            width: 2px;
+            animation: beam 5s infinite ease-in-out; /* Reduced from 8s */
+            z-index: 0;
+        }
+        
+        .login-container {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 420px;
+            max-width: 90%;
+            position: relative;
+            z-index: 2;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeInUp 0.6s ease-out forwards;
+            border-top: 4px solid var(--primary);
+        }
+        
+        .logo-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .logo-header img {
+            height: 60px;
+            margin-bottom: 1rem;
+        }
+        
+        .logo-header h2 {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .logo-header p {
+            color: var(--text);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .input-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        
+        .input-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 15px;
+            transition: all 0.3s;
+        }
+        
+        .input-group input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(42, 127, 98, 0.2);
+            outline: none;
+        }
+        
+        .login-btn {
+            width: 100%;
+            padding: 13px;
+            background-color: var(--primary);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .login-btn:hover {
+            background-color: var(--dark);
+            transform: translateY(-2px);
+        }
+        
+        .login-btn i {
+            margin-left: 8px;
+            transition: transform 0.3s;
+        }
+        
+        .login-btn:hover i {
+            transform: translateX(3px);
+        }
+        
+        .links {
+            display: flex;
+            justify-content: space-between;
+            margin: 1.5rem 0;
+        }
+        
+        .links a {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+        }
+        
+        .links a:hover {
+            color: var(--secondary);
+            text-decoration: underline;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 2rem;
+            color: var(--text);
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            50% {
+                transform: translate(calc(var(--move-x) * 10px), calc(var(--move-y) * 10px)) rotate(180deg);
+            }
+            100% {
+                transform: translate(0, 0) rotate(360deg);
+            }
+        }
+        
+        @keyframes beam {
+            0% {
+                height: 0;
+                opacity: 0;
+                transform: translateY(0) rotate(var(--rotate));
+            }
+            50% {
+                height: var(--height);
+                opacity: 0.6;
+            }
+            100% {
+                height: 0;
+                opacity: 0;
+                transform: translateY(calc(var(--height) * -1)) rotate(var(--rotate));
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 1.8rem;
+            }
+            
+            .links {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Animated background elements will be added by JS -->
+    
+    <div class="login-container">
+        <div class="logo-header">
+            <!-- In a real implementation, you would use your actual logo -->
+            <div  style="font-size: 24px; font-weight: 700; color: var(--primary; margin-bottom: 10px;">Bring Bright Foundation</div>
+            <p>Empowering Communities, Transforming Lives</p>
+        </div>
+        
+        <div class="input-group">
+            <label for="email">Email ID</label>
+            <input type="email" id="email" placeholder="Enter your organizational email">
+        </div>
+        
+        <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password">
+        </div>
+        
+        <button class="login-btn" id="loginBtn">
+            Access Dashboard <i class="fas fa-arrow-right"></i>
+        </button>
+        
+        <div class="links">
+            <a href="#" class="forgot-password">Forgot password?</a>
+            <a href="#" class="contact-support">Contact Support</a>
+        </div>
+        
+        <div class="footer">
+            National Government Organization<br>
+            Helpline: 1800-123-4567 | contact@bringbright.org
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Create community circles (representing people/communities)
+            createCommunityCircles();
+            
+            // Create light beams (representing hope/transformation)
+            createLightBeams();
+            
+            // Login button interaction
+            const loginBtn = document.getElementById('loginBtn');
+            loginBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Pulse animation
+                this.style.transform = 'translateY(0)';
+                setTimeout(() => {
+                    this.style.transform = 'translateY(-2px)';
+                }, 150);
+                
+                // Here you would handle actual login
+                console.log('Login attempted for Bring Bright Foundation');
+            });
+            
+            // Forgot password link
+            document.querySelector('.forgot-password').addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('Password reset instructions will be sent to your registered email.');
+            });
+            
+            // Contact support link
+            document.querySelector('.contact-support').addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('Please contact: support@bringbright.org or call 1800-123-4567');
+            });
+        });
+        
+        function createCommunityCircles() {
+            const colors = [
+                'rgba(42, 127, 98, 0.1)',
+                'rgba(249, 168, 40, 0.1)',
+                'rgba(26, 62, 52, 0.1)'
+            ];
+            
+            for (let i = 0; i < 12; i++) {
+                const circle = document.createElement('div');
+                circle.classList.add('community-circle');
+                
+                // Random size between 30px and 120px
+                const size = Math.random() * 90 + 30;
+                circle.style.width = `${size}px`;
+                circle.style.height = `${size}px`;
+                
+                // Random position
+                circle.style.left = `${Math.random() * 100}%`;
+                circle.style.top = `${Math.random() * 100}%`;
+                
+                // Random color
+                circle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                
+                // Random movement direction
+                circle.style.setProperty('--move-x', Math.random() > 0.5 ? 1 : -1);
+                circle.style.setProperty('--move-y', Math.random() > 0.5 ? 1 : -1);
+                
+                // Random animation duration (faster)
+                const duration = Math.random() * 5 + 5; // Reduced range
+                circle.style.animationDuration = `${duration}s`;
+                
+                document.body.appendChild(circle);
+            }
+        }
+        
+        function createLightBeams() {
+            for (let i = 0; i < 8; i++) {
+                const beam = document.createElement('div');
+                beam.classList.add('light-beam');
+                
+                // Random position
+                beam.style.left = `${Math.random() * 100}%`;
+                beam.style.top = `${Math.random() * 100}%`;
+                
+                // Random height between 100px and 300px
+                const height = Math.random() * 200 + 100;
+                beam.style.setProperty('--height', `${height}px`);
+                
+                // Random rotation
+                const rotate = Math.random() * 30 - 15;
+                beam.style.setProperty('--rotate', `${rotate}deg`);
+                
+                // Random delay (shorter)
+                const delay = Math.random() * 3; // Reduced
+                beam.style.animationDelay = `${delay}s`;
+                
+                document.body.appendChild(beam);
+            }
+        }
+    </script>
+</body>
+</html>

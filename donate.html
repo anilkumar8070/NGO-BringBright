@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate to Improve Lives</title>
+    <link rel="stylesheet" href="donate.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Improving Quality of Life</h1>
+        <p>Every donation makes a difference.</p>
+        <button class="donate-btn">Donate Now</button>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="donatepic.jpg" alt="Happy individuals">
+        <h2>Support Our Mission</h2>
+        <p>Help us uplift individuals and communities with your generosity.</p>
+    </section>
+
+    <!-- Donation Form -->
+    <section class="donation-form">
+        <h3>Make a Donation</h3>
+        <div class="tabs">
+            <button class="tab-btn active" onclick="showTab('money')">Money</button>
+            <button class="tab-btn" onclick="showTab('materials')">Materials</button>
+        </div>
+
+        <!-- Money Donation -->
+        <div id="money" class="tab-content active">
+            <label>Choose an amount:</label>
+            <div class="amounts">
+                <button>$25</button>
+                <button>$50</button>
+                <button>$100</button>
+                <input type="number" placeholder="Custom Amount" min="1">
+            </div>
+            <label><input type="checkbox"> Make this recurring (monthly)</label>
+            <button class="submit-btn">Donate Money</button>
+        </div>
+
+        <!-- Material Donation -->
+        <div id="materials" class="tab-content">
+            <label>Select items to donate:</label>
+            <select multiple>
+                <option>Clothing</option>
+                <option>Food</option>
+                <option>Books</option>
+                <option>Other (specify below)</option>
+            </select>
+            <textarea placeholder="Describe other items..."></textarea>
+            <button class="submit-btn">Submit Materials</button>
+        </div>
+    </section>
+
+    <!-- QR Code Section -->
+    <section class="qr-section">
+        <h3>Scan to Donate</h3>
+        <img src="your_qr_code.png" alt="QR Code">
+        <p>Or use your camera to scan a code:</p>
+        <video id="video" width="300" height="200"></video>
+        <canvas id="canvas" style="display:none;"></canvas>
+        <button onclick="startScanner()">Start Scanner</button>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="impact">
+        <h3>Your Impact</h3>
+        <p>$50 = Meals for 10 people</p>
+        <p>Clothing = Warmth for a family</p>
+        <div class="progress-bar">
+            <div class="progress" style="width: 33%;">33% to Goal</div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Contact: info@yourwebsite.com | Follow us on social media</p>
+    </footer>
+
+    <script src="https://unpkg.com/jsqr/dist/jsQR.js"></script>
+    <script src="donate.js"></script>
+</body>
+</html>

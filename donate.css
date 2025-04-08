@@ -1,0 +1,293 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f5f6f5;
+}
+
+/* Header */
+header {
+    background: #fbfe65;
+    color: #232323;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.donate-btn {
+    background: #232323;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.donate-btn:hover {
+    color: yellow;
+    transform: translateY(-2px);
+}
+
+/* Hero Section */
+.hero {
+    padding: 60px 20px;
+    background: #fff;
+    text-align: center;
+}
+
+.hero img {
+    max-width: 100%;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hero h2 {
+    font-size: 2rem;
+    margin: 20px 0;
+    color: #232323;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Donation Form */
+.donation-form {
+    padding: 40px 20px;
+    background: #232323;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.donation-form h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    padding: 10px 25px;
+    font-size: 1rem;
+    border: none;
+    background: #e9ecef;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.tab-btn.active {
+    background: #fbfe65;
+    color: #232323;
+    border-radius: 5px;
+}
+
+.tab-content {
+    display: none;
+    padding: 20px;
+    background: #fafafa;
+    border-radius: 8px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.amounts {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.amounts button {
+    padding: 10px 20px;
+    background: #232323;
+    color: #fbfe65;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.amounts button:hover {
+    background: #0056b3;
+}
+
+.amounts input {
+    padding: 10px;
+    width: 120px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.tab-content label {
+    display: block;
+    margin: 10px 0;
+    font-size: 1rem;
+}
+
+.tab-content select, .tab-content textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.submit-btn {
+    background: #232323;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: block;
+    margin: 20px auto 0;
+}
+
+.submit-btn:hover {
+    background: #218838;
+}
+
+/* QR Code Section */
+.qr-section {
+    padding: 40px 20px;
+    background: #f5f6f5;
+    text-align: center;
+}
+
+.qr-section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.qr-section img {
+    max-width: 200px;
+    margin: 20px 0;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background: white;
+    border-radius: 5px;
+}
+
+.qr-section video {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.qr-section button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #fbfe65;
+    color: #232323;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.qr-section button:hover {
+    background: #232323;
+    color: #fbfe65;
+}
+
+/* Impact Section */
+.impact {
+    padding: 40px 20px;
+    background: #232323;
+    text-align: center;
+}
+
+.impact h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: white;
+    font-weight: 900;
+}
+
+.impact p {
+    font-size: 1.1rem;
+    margin: 10px 0;
+    color: #fff;
+}
+
+.progress-bar {
+    width: 80%;
+    max-width: 600px;
+    background: #e9ecef;
+    margin: 20px auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress {
+    background: #fbfe65;
+    height: 25px;
+    color: #232323;
+    line-height: 25px;
+    text-align: center;
+    transition: width 0.5s ease;
+}
+
+/* Footer */
+footer {
+    background: #fbfe65;
+    color: #232323;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    .amounts {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .qr-section video {
+        width: 100%;
+        max-width: 300px;
+    }
+}
