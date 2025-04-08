@@ -1,0 +1,30 @@
+.vid{
+    width: 55%;
+    display: flex;
+    justify-content: space-evenly;
+    z-index: 10;
+    
+}
+.vidx{
+    height: 350px;
+    margin: 0;
+    margin-left: -9rem;
+    display: flex;
+    border-radius: 15px;
+    position: relative;
+    left: 6rem;
+    box-shadow: 1px 1px 10px #fbfe65;
+    z-index: 10;
+}
+
+.vidx:hover{
+    transition: 0.75s;
+    transform: scale(1.15);
+    box-shadow: 50px -20px 100px #fbfe65;
+    z-index: 10;
+}
+
+.bdr :hover{
+    border: white 10px solid;
+    transition: 0.4s;
+}
